@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --ink: #292321;
+    --muted: #817773;
+    --cream: #fbf8f4;
+    --rose: #a65d68;
+    --dark: #874650;
+    --pale: #f4e8e7;
+    --line: #eee5df;
+    --shadow: 0 18px 50px rgba(64, 42, 36, .08)
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font: 15px 'DM Sans', Arial, sans-serif
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+.site-header {
+    min-height: 78px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: #fff;
+    border-bottom: 1px solid var(--line)
+}
+
+.brand {
+    font: 700 27px 'Playfair Display', Georgia, serif;
+    letter-spacing: 2px;
+    color: var(--dark);
+    white-space: nowrap
+}
+
+.brand span {
+    display: block;
+    margin-top: -3px;
+    text-align: center;
+    font: 700 9px 'DM Sans', sans-serif;
+    letter-spacing: 4px;
+    color: var(--muted)
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px
+}
+
+.nav-links a {
+    padding: 10px 14px;
+    border-radius: 25px;
+    color: #625752;
+    font-size: 13px;
+    font-weight: 700
+}
+
+.nav-links a:hover {
+    background: var(--pale);
+    color: var(--dark)
+}
+
+.nav-links .nav-primary {
+    background: var(--rose);
+    color: white
+}
+
+.page-wrap {
+    width: min(1120px, 90%);
+    margin: 42px auto 70px
+}
+
+.welcome-line {
+    color: var(--muted);
+    font-size: 14px
+}
+
+.welcome-line strong {
+    color: var(--dark)
+}
+
+.page-heading {
+    margin: 0 0 8px;
+    font: 600 clamp(30px, 4vw, 42px) 'Playfair Display', Georgia, serif
+}
+
+.page-subtitle {
+    margin: 0 0 28px;
+    color: var(--muted);
+    line-height: 1.7
+}
+
+.panel {
+    padding: 34px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--shadow)
+}
+
+.form-panel {
+    max-width: 720px;
+    margin: auto
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.field.full {
+    grid-column: 1/-1
+}
+
+label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #514641
+}
+
+input {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    border: 1px solid #e5d9d3;
+    border-radius: 9px;
+    background: #fffdfb;
+    color: var(--ink);
+    font: inherit;
+    outline: none
+}
+
+input:focus {
+    border-color: var(--rose);
+    box-shadow: 0 0 0 3px #a65d6820
+}
+
+input[type=file] {
+    padding: 9px
+}
+
+input[type=submit],
+.button {
+    display: inline-flex;
+    width: auto;
+    min-height: 45px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 23px;
+    border: 0;
+    border-radius: 28px;
+    background: var(--rose);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer
+}
+
+input[type=submit]:hover,
+.button:hover {
+    background: var(--dark)
+}
+
+.form-actions {
+    margin-top: 24px
+}
+
+.message {
+    margin: 18px 0 0;
+    padding: 12px 15px;
+    border-radius: 9px;
+    background: var(--pale);
+    color: var(--dark);
+    text-align: center;
+    font-weight: 600
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    background: #fff
+}
+
+.auth-visual {
+    min-height: 100vh;
+    padding: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    background: linear-gradient(180deg, #26191812, #261918b8), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=85') center/cover
+}
+
+.auth-visual .brand {
+    color: #fff;
+    font-size: 34px
+}
+
+.auth-visual .brand span {
+    color: #ffffffc9;
+    text-align: left
+}
+
+.auth-visual h1 {
+    max-width: 520px;
+    margin: 22px 0 12px;
+    font: 500 clamp(38px, 5vw, 62px)/1.08 'Playfair Display', Georgia, serif
+}
+
+.auth-visual p {
+    max-width: 430px;
+    color: #ffffffdf;
+    line-height: 1.8
+}
+
+.auth-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45px 8%
+}
+
+.auth-card {
+    width: min(420px, 100%)
+}
+
+.auth-card h2 {
+    margin: 0 0 8px;
+    font: 600 36px 'Playfair Display', Georgia, serif
+}
+
+.auth-card .page-subtitle {
+    margin-bottom: 28px
+}
+
+.auth-card .field {
+    margin-bottom: 18px
+}
+
+.auth-card input[type=submit] {
+    width: 100%;
+    margin-top: 8px
+}
+
+.auth-switch {
+    margin-top: 24px;
+    color: var(--muted);
+    text-align: center
+}
+
+.auth-switch a {
+    color: var(--dark);
+    font-weight: 700
+}
+
+.hero-strip {
+    padding: 42px 7%;
+    background: #f1e4df
+}
+
+.hero-strip p {
+    margin: 0 0 7px;
+    color: var(--dark);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase
+}
+
+.hero-strip h1 {
+    margin: 0;
+    font: 600 clamp(32px, 4vw, 48px) 'Playfair Display', Georgia, serif
+}
+
+.table-wrap {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    box-shadow: var(--shadow)
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff
+}
+
+th,
+td {
+    padding: 15px 14px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap
+}
+
+thead th {
+    background: #f7efeb;
+    color: #65534d;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase
+}
+
+tbody tr:hover {
+    background: #fffaf7
+}
+
+.product-thumb {
+    width: 74px;
+    height: 88px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #f5eeea
+}
+
+.table-action {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: var(--pale);
+    color: var(--dark);
+    font-size: 12px;
+    font-weight: 700
+}
+
+.table-action.delete {
+    background: #f8e9e7;
+    color: #a34840
+}
+
+.product-detail {
+    display: grid;
+    grid-template-columns: minmax(250px, .9fr) 1.1fr;
+    gap: 38px;
+    align-items: center
+}
+
+.product-detail-image {
+    width: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: 14px;
+    background: #f5eeea
+}
+
+.product-detail h2 {
+    margin: 0 0 12px;
+    font: 600 36px 'Playfair Display', Georgia, serif
+}
+
+.detail-description {
+    color: var(--muted);
+    line-height: 1.8
+}
+
+.detail-price {
+    margin: 22px 0;
+    color: var(--dark);
+    font-size: 25px;
+    font-weight: 700
+}
+
+.site-footer {
+    padding: 25px 7%;
+    border-top: 1px solid var(--line);
+    background: #fff;
+    color: var(--muted);
+    text-align: center;
+    font-size: 12px
+}
+
+@media(max-width:760px) {
+    .site-header {
+        padding: 18px 5%;
+        align-items: flex-start;
+        flex-direction: column
+    }
+
+    .page-wrap {
+        width: 92%;
+        margin-top: 28px
+    }
+
+    .panel {
+        padding: 22px
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr
+    }
+
+    .field.full {
+        grid-column: auto
+    }
+
+    .auth-page {
+        grid-template-columns: 1fr
+    }
+
+    .auth-visual {
+        min-height: 300px;
+        padding: 9%
+    }
+
+    .auth-visual h1 {
+        font-size: 38px
+    }
+
+    .auth-content {
+        padding: 42px 7%
+    }
+
+    .product-detail {
+        grid-template-columns: 1fr
+    }
+
+    .product-detail-image {
+        max-height: 380px
+    }
+}

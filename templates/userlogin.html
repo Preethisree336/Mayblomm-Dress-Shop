@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preetypicks| Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <main class="auth-page">
+        <section class="auth-visual"><a class="brand" href="/">MAYBLOOM<span>THE DRESS BOUTIQUE</span></a>
+            <h1>Style that feels like you.</h1>
+            <p>A thoughtfully curated space for beautiful dresses and timeless everyday style.</p>
+        </section>
+        <section class="auth-content">
+            <div class="auth-card">
+                <h2>Welcome back</h2>
+                <p class="page-subtitle">Sign in to manage your boutique collection.</p>
+                <form action="/user_data" method="POST">
+                    <div class="field"><label>Username</label><input type="text" name="username"
+                            placeholder="Enter your username" required></div>
+                    <div class="field"><label>Password</label><input type="password" name="password"
+                            placeholder="Enter your password" required></div><input type="submit" value="Sign In">
+                </form>{% if res %}<p class="message">{{ res }}</p>{% endif %}<p class="auth-switch">New to Maybloom? <a
+                        href="/register">Create an account</a></p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

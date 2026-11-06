@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maybloom| Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <main class="auth-page">
+        <section class="auth-visual"><a class="brand" href="/">MAYBLOOM<span>THE DRESS BOUTIQUE</span></a>
+            <h1>Your style story starts here.</h1>
+            <p>Create an account to manage your boutique collection with ease.</p>
+        </section>
+        <section class="auth-content">
+            <div class="auth-card">
+                <h2>Create account</h2>
+                <p class="page-subtitle">Join Preetypicks and get started.</p>
+                <form action="/register" method="POST">
+                    <div class="field"><label>Username</label><input type="text" name="username"
+                            placeholder="Choose a username" required></div>
+                    <div class="field"><label>Password</label><input type="password" name="password"
+                            placeholder="Create a password" required></div><input type="submit" value="Create Account">
+                </form>{% if res %}<p class="message">{{ res }}</p>{% endif %}<p class="auth-switch">Already have an
+                    account? <a href="/">Sign in</a></p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

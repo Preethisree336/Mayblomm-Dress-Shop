@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maybloom | Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="site-header"><a class="brand" href="/dress">maybloom<span>THE DRESS BOUTIQUE</span></a>
+        <nav class="nav-links"><a href="/view_details">View Collection</a><a class="nav-primary"
+                href="/logout">Logout</a></nav>
+    </header>
+    <main class="page-wrap">
+        <p class="welcome-line">MAYBLOOM COLLECTION / PRODUCT DETAILS</p>
+        <section class="panel product-detail"><img class="product-detail-image"
+                src="{{ url_for('static', filename='images/' + res.iname) }}" alt="{{ res.name }}">
+            <div>
+                <p class="welcome-line">A PIECE FROM OUR COLLECTION</p>
+                <h2>{{ res.name }}</h2>
+                <p class="detail-description">{{ res.description }}</p>
+                <p class="detail-description"><strong>Colour:</strong> {{ res.color }}</p>
+                <p class="detail-price">₹ {{ res.price }}</p><a class="button" href="/view_details">Back to
+                    Collection</a>
+            </div>
+        </section>w
+    </main>
+    <footer class="site-footer">MAYBLOOM BOUTIQUE · Thoughtfully chosen styles</footer>
+</body>
+
+</html>

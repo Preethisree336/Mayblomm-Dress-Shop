@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maybloom | Add Dress</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="site-header"><a class="brand" href="/dress">Maybloom<span>THE DRESS BOUTIQUE</span></a>
+        <nav class="nav-links"><a href="/dress">Add Dress</a><a href="/view_details">View Collection</a><a
+                class="nav-primary" href="/logout">Logout</a></nav>
+    </header>
+    <main class="page-wrap">
+        <p class="welcome-line">Welcome back, <strong>{{ session["username"] }}</strong></p>
+        <h1 class="page-heading">Add to your collection</h1>
+        <p class="page-subtitle">Add a beautiful new piece to the Maybloom boutique collection.</p>
+        <section class="panel form-panel">
+            <form action="/form_data" method="POST" enctype="multipart/form-data">
+                <div class="form-grid">
+                    <div class="field"><label>Dress Name</label><input type="text" name="name"
+                            placeholder="e.g. Floral Midi Dress" required></div>
+                    <div class="field"><label>Description</label><input type="text" name="description"
+                            placeholder="Short product description" required></div>
+                    <div class="field"><label>Color</label><input type="text" name="color" placeholder="e.g. Dusty Rose"
+                            required></div>
+                    <div class="field"><label>Price (₹)</label><input type="number" name="price"
+                            placeholder="Enter price" min="0" required></div>
+                    <div class="field full"><label>Dress Image</label><input type="file" name="img" accept="image/*"
+                            required></div>
+                </div>
+                <div class="form-actions"><input type="submit" value="Add to Collection"></div>
+            </form>{% if res %}<p class="message">{{ res }}</p>{% endif %}
+        </section>
+    </main>
+    <footer class="site-footer">MAYBLOOM BOUTIQUE · Thoughtfully chosen styles</footer>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maybloom | Collection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="site-header"><a class="brand" href="/dress">MAYBLOOM<span>THE DRESS BOUTIQUE</span></a>
+        <nav class="nav-links"><a href="/dress">Add Dress</a><a class="nav-primary" href="/logout">Logout</a></nav>
+    </header>
+    <section class="hero-strip">
+        <p>Curated with care</p>
+        <h1>The Preetypicks Collection</h1>
+    </section>
+    <main class="page-wrap">
+        <p class="page-subtitle">Browse, view and manage all the dresses in your boutique.</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Color</th>
+                        <th>Price</th>
+                        <th>View</th>
+                        <th>Delete</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in res %}<tr>
+                        <td><img class="product-thumb" src="{{ url_for('static', filename='images/' + i.iname) }}"
+                                alt="{{ i.name }}"></td>
+                        <td><strong>{{ i.name }}</strong></td>
+                        <td>{{ i.description }}</td>
+                        <td>{{ i.color }}</td>
+                        <td>₹ {{ i.price }}</td>
+                        <td><a class="table-action" href="/select_dress/{{ i.name }}">View</a></td>
+                        <td><a class="table-action delete" href="/delete_dress/{{ i.name }}">Delete</a></td>
+                        <td><a class="table-action" href="/modify_dress/{{ i.name }}">Edit</a></td>
+                    </tr>{% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="site-footer">MAYBLOOM BOUTIQUE · Thoughtfully chosen styles</footer>
+</body>
+
+</html>

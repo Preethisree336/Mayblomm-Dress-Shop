@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maybloom| Edit Dress</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="site-header"><a class="brand" href="/dress">MAYBLOOM<span>THE DRESS BOUTIQUE</span></a>
+        <nav class="nav-links"><a href="/view_details">View Collection</a><a class="nav-primary"
+                href="/logout">Logout</a></nav>
+    </header>
+    <main class="page-wrap">
+        <h1 class="page-heading">Edit product details</h1>
+        <p class="page-subtitle">Update the information for this boutique piece.</p>
+        <section class="panel form-panel">
+            <form action="/modify_data" method="POST">
+                <div class="form-grid">
+                    <div class="field"><label>Dress Name</label><input type="text" name="name" value="{{ res.name }}"
+                            required></div>
+                    <div class="field"><label>Description</label><input type="text" name="description"
+                            value="{{ res.description }}" required></div>
+                    <div class="field"><label>Color</label><input type="text" name="color" value="{{ res.color }}"
+                            required></div>
+                    <div class="field"><label>Price (₹)</label><input type="number" name="price" value="{{ res.price }}"
+                            min="0" required></div>
+                </div>
+                <div class="form-actions"><input type="submit" value="Save Changes" class="submit"></div>
+            </form>
+        </section>
+    </main>
+    <footer class="site-footer">MAYBLOOM BOUTIQUE · Thoughtfully chosen styles</footer>
+</body>
+
+</html>
